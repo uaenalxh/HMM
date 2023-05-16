@@ -16,8 +16,8 @@ for i in range(len(Q)):
     for j in range(len(Q)):
         for k in range(len(Q)):
             pathlist.append((i,j,k))
-            plist.append(pai[i]*B[i][0]*A[i][j]*B[j][1]*A[j][k]*B[k][0])
-            print((i,j,k),("%s*%s*%s*%s*%s*%s =")%(pai[i],B[i][0],A[i][j],B[j][1],A[j][k],B[k][0]),pai[i]*B[i][0]*A[i][j]*B[j][1]*A[j][k]*B[k][0])
+            plist.append(pai[i]*B[i][O[0]]*A[i][j]*B[j][O[1]]*A[j][k]*B[k][O[2]])
+            print((i,j,k) ,pai[i]*B[i][O[0]]*A[i][j]*B[j][O[1]]*A[j][k]*B[k][O[2]])
 #看概率最大的路径 则是最优
 
 maxp=max(plist) #计算列表最大值                
