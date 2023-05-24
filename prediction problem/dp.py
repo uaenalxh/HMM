@@ -12,16 +12,15 @@ class Viterbi:
        self.T =len(self.o) #numbers of observations
        self.PI=PI # initial state 
        self.delte=np.zeros((self.T, self.N))
-       self.I=[] #得到的状态序列是
+       self.I=[] 
        self.keci=np.zeros((self.T, self.N), dtype=int)
 
     def cal_delte(self):
-        # 在书中时刻t的取值是 1到 T 但是写代码数组是从0 开始的 方便起见 我们讲t也从0开始
-        o1=self.o[0]#第一个观测变量是
-        o1_index=self.index[o1] #第一个观测变量的下标是
+        o1=self.o[0]#initial observation
+        o1_index=self.index[o1] 
         for i in range(self.N):
             self.delte[0][i] = self.PI[i][0]*self.B[i][o1_index]
-        for t in range(1,self.T):#从时刻t=1 开始 到T-1
+        for t in range(1,self.T):
             ot=self.o[t]
             ot_index=self.index[ot]   
             for i in range(self.N):
